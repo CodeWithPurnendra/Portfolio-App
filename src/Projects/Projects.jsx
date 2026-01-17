@@ -26,14 +26,20 @@ function Projects({ projects }) {
       <ul className="projects" ref={sliderRef}>
         {projects.map((project) => (
           <li key={project.id} className="project-card">
-            <img
-              src={project.image}
-              alt={`Screenshot of ${project.title}`}
-            />
+            <img src={project.image} alt={`Screenshot of ${project.title}`} />
 
             <div className="project-content">
               <h4>{project.title}</h4>
-              <button>{project.button}</button>
+
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+                aria-label={`View code for ${project.title}`}
+              >
+                {project.button}
+              </a>
             </div>
           </li>
         ))}

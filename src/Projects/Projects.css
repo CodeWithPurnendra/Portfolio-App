@@ -28,14 +28,8 @@
   background: #ffffff;
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 28px 55px rgba(0, 0, 0, 0.12);
 }
 
 /* IMAGE */
@@ -59,7 +53,7 @@
 }
 
 /* BUTTON */
-.project-content button {
+.project-link {
   padding: 0.55rem 1.5rem;
   font-size: 0.85rem;
   font-weight: 600;
@@ -70,9 +64,10 @@
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
 }
 
-.project-content button:hover {
+.project-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(99, 102, 241, 0.45);
 }

@@ -39,6 +39,23 @@
   color: #6366f1;
 }
 
+/* Scroll animation */
+.skill {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skill.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animate bar only in view */
+.progress-fill {
+  transition: width 1.4s ease;
+}
+
 /* BAR */
 .progress-bar {
   width: 100%;

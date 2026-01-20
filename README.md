@@ -1,16 +1,80 @@
-# React + Vite
+# 🌐 Single Page Portfolio App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive **single-page portfolio website** built using **React**.  
+This project showcases my skills, projects, and contact information in a clean and interactive UI.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📌 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ⚛️ Built with **React**
+- 📱 Fully **responsive design**
+- 🎨 Clean and modern UI
+- 🧩 Component-based architecture
+- 🔄 Smooth scrolling navigation
+- 📂 Projects showcase section
+- 📞 Contact section
+- 🌙 Easy to customize and extend
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **React**
+- **JavaScript (ES6+)**
+- **HTML5**
+- **CSS3**
+- **React Icons** (if used)
+- **Vite / Create React App** (depending on your setup)
+
+---
+
+## 📁 Project Structure
+
+portfolio-app/
+│
+├── src/
+│ ├── components/
+│ │ ├── Header.jsx
+│ │ ├── About.jsx
+│ │ ├── Projects.jsx
+│ │ ├── Contact.jsx
+│ │ └── Footer.jsx
+│ │
+│ ├── App.jsx
+│ ├── main.jsx
+│ └── index.css
+│
+├── public/
+│ └── index.html
+│
+├── package.json
+└── README.md
+
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/CodeWithPurnendra/portfolio-app.git
+```
+2. Navigate to the project folder
+   ```bash
+   cd portfolio-app
+   ```
+3. Install dependencies
+ ```bash
+   npm install
+  ```
+4. Start Development server
+  ```bash
+  npm run dev
+  ```
+5. Open your brower
+  ```bash
+   http://localhost:5173
+   ```
+(Port may vary depending on your setup)

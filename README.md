@@ -25,8 +25,8 @@ This project showcases my skills, projects, and contact information in a clean a
 - **JavaScript (ES6+)**
 - **HTML5**
 - **CSS3**
-- **React Icons** (if used)
-- **Vite / Create React App** (depending on your setup)
+- **React Icons**
+- **Vite**
 
 ---
 

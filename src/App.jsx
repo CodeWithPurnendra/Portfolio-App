@@ -1,4 +1,4 @@
-import "./App.css";
+
 import NavBar from "./Components/NavBar/NavBar.jsx";
 import Header from "./Components/Header/Header.jsx";
 import Skills from "./Components/Skills/Skill.jsx";

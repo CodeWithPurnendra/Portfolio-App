@@ -2,47 +2,66 @@
 .header-container {
   min-height: 90vh;
   padding: 2.5rem 2rem 4rem;
-  background: linear-gradient(135deg, #e0f2fe, #ede9fe);
+  background: linear-gradient(135deg, #e0f2fe, #ede9fe); /* ❌ DO NOT CHANGE */
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle ambient glow */
+.header-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(99, 102, 241, 0.15),
+    transparent 60%
+  );
+  pointer-events: none;
 }
 
 /* LAYOUT */
 .header-content {
-  max-width: 550px;
-}
-
-.header-container {
-  gap: 4rem;
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
 }
 
 /* HEADLINE */
 .header-content h2 {
-  font-size: 3rem;
+  font-size: 3.1rem;
   font-weight: 800;
   color: #1e293b;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.6px;
 }
 
 .header-content h2 span {
   background: linear-gradient(90deg, #38bdf8, #a78bfa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 4s linear infinite;
 }
 
 /* DESCRIPTION */
 .header-content p {
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  margin-top: 1.6rem;
+  font-size: 1.12rem;
+  line-height: 1.75;
   color: #475569;
+  max-width: 95%;
 }
 
 /* BUTTON */
 .explore {
-  margin-top: 2.2rem;
-  padding: 0.9rem 2.2rem;
+  display: inline-block;
+  margin-top: 2.4rem;
+  padding: 0.95rem 2.5rem;
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
@@ -50,31 +69,45 @@
   border: none;
   border-radius: 999px;
   cursor: pointer;
-  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+    0 15px 30px rgba(99, 102, 241, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  text-decoration: none;
 }
 
 .explore:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.45);
+  transform: translateY(-4px);
+  box-shadow:
+    0 22px 45px rgba(99, 102, 241, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 /* IMAGE */
+.header-image {
+  position: relative;
+  z-index: 1;
+}
+
 .header-image img {
   width: 320px;
   height: 320px;
   object-fit: cover;
   border-radius: 50%;
   border: 6px solid #ffffff;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.18),
+    inset 0 2px 6px rgba(255, 255, 255, 0.6);
+  animation: float 4s ease-in-out infinite;
 }
+
 /* ---------------- ANIMATIONS ---------------- */
 
 /* Fade + slide */
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(35px);
   }
   to {
     opacity: 1;
@@ -88,7 +121,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-14px);
   }
   100% {
     transform: translateY(0);
@@ -108,17 +141,17 @@
 /* Button pulse */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.35);
   }
   70% {
-    box-shadow: 0 0 0 15px rgba(99, 102, 241, 0);
+    box-shadow: 0 0 0 18px rgba(99, 102, 241, 0);
   }
   100% {
     box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
   }
 }
 
-/* Text animation */
+/* Entrance animations */
 .header-content h2,
 .header-content p,
 .explore {
@@ -131,18 +164,7 @@
 
 .explore {
   animation-delay: 0.4s;
-  animation: fadeUp 0.9s ease forwards, pulse 3s infinite;
-}
-
-/* Gradient shimmer on name */
-.header-content h2 span {
-  background-size: 200% 200%;
-  animation: shimmer 4s linear infinite;
-}
-
-/* Floating profile image */
-.header-image img {
-  animation: float 4s ease-in-out infinite;
+  animation: fadeUp 0.9s ease forwards, pulse 3.2s infinite;
 }
 
 /* RESPONSIVE */
@@ -154,6 +176,11 @@
 
   .header-content h2 {
     font-size: 2.4rem;
+  }
+
+  .header-content p {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .header-image img {
